@@ -2,16 +2,44 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>gov.cancer.ccr.oit</groupId>
   <artifactId>datadog-appender</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <name>CCR OIT DataDog logback appender</name>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
+	<licenses>
+		<license>
+			<name>Public Domain</name>
+		</license>
+	</licenses>
+	<organization>
+		<name>Center for Cancer Research</name>
+		<url>https://ccr.cancer.gov/</url>
+	</organization>
+	<developers>
+		<developer>
+			<id>levineja</id>
+			<name>Jason Levine</name>
+			<email>levineja@mail.nih.gov</email>
+			<organization>Center for Cancer Research</organization>
+			<organizationUrl>https://ccr.cancer.gov/</organizationUrl>
+		</developer>
+	</developers>
+	<issueManagement>
+		<system>Github Issues</system>
+		<url>https://github.com/NCI-CCR-OIT/datadog-appender/issues</url>
+	</issueManagement>
+	<scm>
+		<connection>scm:git:https://github.com/NCI-CCR-OIT/datadog-appender</connection>
+		<developerConnection>scm:git:https://github.com/NCI-CCR-OIT/datadog-appender</developerConnection>
+		<tag>HEAD</tag>
+		<url>https://github.com/NCI-CCR-OIT/datadog-appender</url>
+	</scm>
 	<distributionManagement>
 		<repository>
-			<id>github</id>
-			<name>Github Packages</name>
+			<id>github-datadog-appender</id>
+			<name>Github Packages (Datadog Appender)</name>
 			<url>https://maven.pkg.github.com/NCI-CCR-OIT/datadog-appender</url>
 		</repository>
 	</distributionManagement>
@@ -55,12 +83,6 @@
 			<groupId>com.datadoghq</groupId>
 			<artifactId>datadog-api-client</artifactId>
 			<version>2.40.0</version>
-		</dependency>
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<version>3.0.1</version>
-			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 </project>

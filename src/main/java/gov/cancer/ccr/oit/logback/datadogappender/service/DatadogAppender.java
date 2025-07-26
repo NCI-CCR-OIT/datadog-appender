@@ -23,7 +23,7 @@ public class DatadogAppender extends AppenderBase<ILoggingEvent> {
 	private String datadogSite = "ddog-gov.com";
 	private String apiKey;
 	private String source = "java";
-	private String service;
+	private String service = "<YOUR APP NAME>";
 	private String hostname;
 	private String tags;
 	private boolean debugMode = false;
