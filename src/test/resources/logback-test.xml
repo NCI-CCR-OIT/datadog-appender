@@ -1,0 +1,17 @@
+<configuration>
+	<appender name="ConAppender" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{MMM dd HH:mm:ss} %m | %C{30}:%L %n</pattern>
+		</encoder>
+	</appender>
+	<appender name="dd" class="gov.cancer.ccr.oit.logback.datadogappender.service.DatadogAppender">
+		<apiKey></apiKey>
+		<service>datadog-appender-tester</service>
+		<debugMode>false</debugMode>
+		<tags>env:test,appVersion:1.0.0</tags>
+	</appender>
+	<root level="debug">
+		<appender-ref ref="ConAppender" />
+		<appender-ref ref="dd" />
+	</root>
+</configuration>
