@@ -22,7 +22,7 @@ This library's Maven artifacts are hosted on Github Projects, so you will first 
 		</repository>
 	</repositories>
 </profile>
-```		
+```
 
 Once that is configured, you can just include it as a dependency in your Maven project:
 
@@ -30,7 +30,7 @@ Once that is configured, you can just include it as a dependency in your Maven p
 <dependency>
 	<groupId>gov.cancer.ccr.oit</groupId>
 	<artifactId>datadog-appender</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 </dependency>
 ```
 
