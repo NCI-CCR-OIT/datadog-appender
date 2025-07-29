@@ -24,7 +24,23 @@ This library's Maven artifacts are hosted on Github Projects, so you will first 
 </profile>
 ```
 
-Once that is configured, you can just include it as a dependency in your Maven project:
+Next, unfortunately, GitHub requires authentication even for packages in public repositories, so you'll need to generate a GitHub personal-access token with permission to read GitHub Packages.
+
+Go to your [GitHub settings page](https://github.com/settings/profile), and then the ["Developer settings" ](https://github.com/settings/apps) link at the bottom of the left-hand sidebar. Click the "Personal access tokens" option on the left, and then the ["Tokens (classic)" link](https://github.com/settings/tokens). Next, click the "Generate new token" button near the top right, and choose "Generate new token (classic)". You'll need to re-authenticate, after which you'll see the page to generate a new classic personal-access token. Give it a name/note, and choose an expiration (it's up to you what you choose, but note that if you give it an expiration, you'll have to generate a new one and update your Maven config with every expiration). The only permission you should have to check is the `read:packages` permission; to create the token, click the green "Generate token" button at the bottom. Finally, copy the token somewhere safe.
+
+Now that you have your token, you need to include it in your Maven config (the same `~/.m2/settings.xml` file), in the `<servers>` stanza:
+
+```
+...
+<server>
+	<id>github-datadog-appender</id>
+	<username>your-github-username</username>
+	<password>token-from-above</password>
+</server>
+...
+```
+
+**Finally**, now that all that is configured, you can include this library as a dependency in your Maven project:
 
 ```
 <dependency>
@@ -34,7 +50,7 @@ Once that is configured, you can just include it as a dependency in your Maven p
 </dependency>
 ```
 
-Finally, configure Logback in your project to include it as an appender, and include that appender in whatever loggers and/or root that you want to use it:
+Once you've included it, you just configure Logback in your project to include it as an appender, and include that appender in whatever loggers and/or root that you want to use it:
 
 ```
 <appender name="DatadogAppender" class="gov.cancer.ccr.oit.logback.datadogappender.service.DatadogAppender">
